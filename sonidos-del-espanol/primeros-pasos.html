@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Primeros pasos · Spanish with Miriam</title><meta name="theme-color" content="#B3121C">
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--rojo:#B3121C;--rojo-osc:#8E0E16;--oro:#E9A81B;--oro-claro:#FBE6B0;--crema:#FFF9EF;--tinta:#2B1A14;--suave:#7A6458;--linea:#F0E2CC;--sombra:0 6px 18px rgba(120,60,20,.10)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--tinta);font-family:Nunito,system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 30px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.15}
+.top{position:sticky;top:0;z-index:5;background:rgba(255,249,239,.95);border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;gap:10px;height:62px;padding-bottom:0}
+.top img{height:54px}
+.top a{margin-left:auto;color:var(--rojo);font-weight:800;text-decoration:none}
+.hero{padding:18px 0 6px}
+.hero h1{color:var(--rojo);font-size:2rem}
+.hero p{color:var(--suave);margin:4px 0 0}
+.ctrl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}
+button{font:inherit;cursor:pointer}
+.chip{border:2px solid var(--rojo);background:#fff;color:var(--rojo);border-radius:20px;padding:6px 14px;font-weight:800}
+.chip.on{background:var(--rojo);color:#fff}
+.panels.one{max-width:520px;margin:0 auto;display:block}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.panel{background:#fff;border:2px solid var(--oro);border-radius:18px;padding:10px;text-align:center;box-shadow:var(--sombra)}
+.panel.no{border-color:#c9c0b8}
+.panel h2{font-size:1.3rem;color:var(--rojo)}
+.panel.no h2{color:#8a8078}
+.panel .ex{color:#9a6c0c;font-weight:800}
+.panel .d{font-size:.92rem;color:#4b3a32;min-height:44px}
+.panel svg{width:100%;height:auto;background:var(--oro-claro);border-radius:12px;margin:6px 0}
+.lbl{font-size:8px;fill:#8a6a10;font-family:Nunito;font-weight:700}
+.card{background:#fff;border-radius:18px;box-shadow:var(--sombra);padding:14px 16px;margin:14px 0}
+.card h3{color:var(--rojo);font-size:1.2rem;margin-bottom:8px}
+.miriam{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.words{display:flex;flex-wrap:wrap;gap:8px}
+.w{display:flex;align-items:center;gap:8px;background:var(--crema);border:2px solid var(--linea);border-radius:14px;padding:6px 10px}
+.w b{font-size:1.1rem}
+.w span{color:var(--suave);font-size:.85rem;font-style:italic}
+.play{border:0;background:var(--rojo);color:#fff;width:34px;height:34px;border-radius:50%;font-size:14px;box-shadow:0 3px 0 var(--rojo-osc)}
+.play.off{background:#d8cfc6;box-shadow:none;cursor:default}
+.box{border-radius:14px;padding:10px 14px;margin:12px 0}
+.rec{background:var(--oro-claro);border-left:6px solid var(--oro)}
+.ojo{background:#FDE3E3;border-left:6px solid var(--rojo)}
+.tt{color:var(--rojo);font-weight:800}
+.en{color:var(--suave);font-style:italic}
+table{border-collapse:collapse;width:100%}
+th{background:var(--rojo);color:#fff;padding:6px 8px;text-align:left}
+td{padding:6px 8px;border-bottom:1px solid var(--linea)}
+tr:nth-child(even) td{background:#FFF3D6}
+.recbtn{background:var(--rojo);color:#fff;border:0;border-radius:14px;padding:10px 16px;font-weight:800;box-shadow:0 3px 0 var(--rojo-osc)}
+.recbtn.live{background:#2E8B57;box-shadow:0 3px 0 #1d6b40}
+.note{font-size:.85rem;color:var(--suave)}
+.vbtn{font-family:Fraunces,serif;font-size:1.6rem;width:54px;height:54px;border-radius:14px;border:2px solid var(--rojo);background:#fff;color:var(--rojo);font-weight:700}
+.vbtn.on{background:var(--rojo);color:#fff}
+footer{text-align:center;color:var(--rojo);font-size:.8rem;margin-top:20px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
+.hub a{display:block;background:#fff;border:2px solid var(--oro);border-radius:18px;padding:18px;text-decoration:none;color:var(--tinta);box-shadow:var(--sombra)}
+.hub a b{font-family:Fraunces,serif;font-size:2rem;color:var(--rojo);display:block}
+
+.palabras{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.palabra{background:#fff;border-radius:22px;box-shadow:var(--sombra);padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center;border:2px solid transparent;transition:border-color .2s}
+.palabra.practicada{border-color:#CDE8D6}
+.palabra .emoji{font-size:4rem;line-height:1;margin:6px 0 8px;filter:drop-shadow(0 3px 4px rgba(0,0,0,.08))}
+.palabra .emoji svg{width:64px;height:64px}
+.palabra .es{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--tinta);padding:4px 10px;border-radius:12px;border:0;border-bottom:2px dashed var(--oro);background:none;cursor:pointer}
+.palabra .es b{color:var(--rojo)}
+.palabra .trad{min-height:1.5em;margin-top:6px;font-weight:700;color:var(--suave);font-size:.98rem}
+.palabra .trad.vista{color:#1F5E8C}
+.acciones{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin-top:12px}
+.acc{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border-radius:14px;font-weight:800;font-size:.92rem;background:var(--crema);border:1.5px solid var(--linea);color:var(--tinta)}
+.acc:disabled{opacity:.4;cursor:default}
+.acc.escuchar{background:var(--rojo);color:#fff;border-color:var(--rojo)}
+.acc.grabar.activo{background:#fff0f0;border-color:var(--rojo);color:var(--rojo);animation:pulso 1s infinite}
+@keyframes pulso{50%{box-shadow:0 0 0 6px rgba(179,18,28,.12)}}
+.acc.comparar{grid-column:1/-1;background:var(--oro-claro);border-color:var(--oro)}
+.acc svg{width:18px;height:18px;flex:none}
+.aviso{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(120px);background:var(--tinta);color:#fff;padding:12px 18px;border-radius:14px;font-weight:700;font-size:.92rem;transition:transform .3s;z-index:20;max-width:90vw;text-align:center}
+.aviso.ver{transform:translateX(-50%) translateY(0)}
+.quien{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.quien input{font:inherit;padding:10px 12px;border:2px solid var(--linea);border-radius:12px;background:var(--crema)}
+.barra{height:8px;background:var(--linea);border-radius:99px;margin-top:6px;overflow:hidden;min-width:90px}
+.barra i{display:block;height:100%;background:var(--oro);border-radius:99px}
+.progreso-txt{font-size:.78rem;color:var(--suave);font-weight:700;margin-top:2px}
+
+.ov{width:100%;border-collapse:separate;border-spacing:0 8px}
+.ov td{background:#fff;border:0;vertical-align:middle;padding:10px}
+.ov tr td:first-child{border-radius:14px 0 0 14px;font-family:Fraunces,serif;font-size:1.7rem;color:var(--rojo);font-weight:700;white-space:nowrap;text-align:center}
+.ov tr td:last-child{border-radius:0 14px 14px 0}
+.ov .how b{display:block}.ov .how span{color:var(--suave);font-size:.9rem}
+.ex4{display:flex;flex-wrap:wrap;gap:6px}
+.ex4 .w{padding:3px 8px}.ex4 .play{width:28px;height:28px;font-size:11px}
+.go{display:inline-block;background:var(--rojo);color:#fff;text-decoration:none;font-weight:800;border-radius:14px;padding:8px 12px;white-space:nowrap;box-shadow:0 3px 0 var(--rojo-osc)}
+.theme{display:inline-block;background:var(--oro-claro);color:#7a5200;border-radius:12px;padding:4px 10px;font-weight:800;margin-top:6px}
+.grid8{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.w8{background:#fff;border:2px solid var(--linea);border-radius:16px;padding:10px;display:flex;align-items:center;gap:10px}
+.w8 .e{font-size:2rem}.w8 b{font-size:1.15rem;display:block}.w8 span{color:var(--suave);font-style:italic;font-size:.9rem}
+.how2{background:#fff;border-radius:18px;box-shadow:var(--sombra);padding:14px 16px;margin:14px 0}
+.how2 h3{color:var(--rojo);margin-bottom:6px}
+.nav{display:flex;justify-content:space-between;margin-top:16px}.nav a{color:var(--rojo);font-weight:800;text-decoration:none}
+@media(max-width:640px){.ov tr{display:block;background:#fff;border-radius:14px;margin-bottom:8px}.ov td{display:block;border-radius:0!important}.ov tr td:first-child{text-align:left}}
+
+.exp{display:flex;align-items:center;gap:10px;background:#fff;border:2px solid var(--linea);border-radius:14px;padding:8px 12px;margin:6px 0}
+.exp b{font-size:1.1rem}.exp span{color:var(--suave);font-style:italic;font-size:.9rem}
+.qq{background:#fff;border-radius:14px;border:2px solid var(--linea);padding:10px 12px;margin:8px 0}
+.qq .es{font-weight:800}.qq .help{display:none;margin-top:6px;background:var(--oro-claro);border-radius:10px;padding:6px 10px;color:#7a5200;font-weight:700}
+.qq .help.show{display:block}.qq .hb{margin-left:6px;font-size:.8rem;border:1.5px solid var(--oro);background:#fff;color:#7a5200;border-radius:10px;padding:2px 8px;font-weight:800;cursor:pointer}
+#mic{width:110px;height:110px;border-radius:50%;border:none;background:var(--rojo);color:#fff;cursor:pointer;box-shadow:0 6px 18px rgba(181,18,27,.35)}
+#mic svg{width:46px;height:46px}#mic.on{background:#7d0d13;animation:pulse 1.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(181,18,27,.5)}70%{box-shadow:0 0 0 22px rgba(181,18,27,0)}100%{box-shadow:0 0 0 0 rgba(181,18,27,0)}}
+.recz{text-align:center;margin:10px 0}#tiempo{font-variant-numeric:tabular-nums;color:#9a6c0c;font-size:20px}
+.btns{display:flex;gap:10px;margin-top:12px}.btns button{flex:1;font-size:16px;padding:12px;border-radius:12px;border:none;font-weight:800}
+.send{background:var(--rojo);color:#fff}.again{background:#EFE6D2}.hide{display:none}
+.secnav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px}
+.secnav a{font-size:.85rem;color:#9a6c0c;text-decoration:none;border:1.5px solid var(--linea);border-radius:16px;padding:5px 10px;font-weight:700;background:#fff}
+.secnav a.act{background:#9a6c0c;color:#fff;border-color:#9a6c0c}
+input#alumna{width:100%;font:inherit;padding:10px 12px;border:2px solid var(--linea);border-radius:12px;background:var(--crema)}
+</style></head><body>
+<div class="top"><div class="wrap"><img alt="Spanish with Miriam" src="logo.png"><a href="index.html">← Inicio</a></div></div>
+<div class="wrap"><div class="hero"><h1 id="titulo"></h1><p><span class="en" id="tituloEn"></span> · Mi día a día · Primeros pasos</p></div>
+<div class="box rec"><span class="tt">How it works:</span> 1. Listen and repeat the expressions (▶ normal, 🐢 slow). 2. Read the questions and answer <b>out loud, in one recording</b>. Tap <b>Ayuda</b> if you need help. 3. Listen to your recording and tap <b>Enviar</b>. Miriam will listen to it!</div>
+<div id="contenido"></div>
+<div class="card"><label for="alumna"><b>Tu nombre</b> <span class="en">· Your name</span></label><input id="alumna" placeholder="Escribe tu nombre · Your name" autocomplete="given-name">
+<div class="recz" id="zona"><button id="mic" aria-label="Grabar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v7a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V22h2v-3.08A7 7 0 0 0 19 12h-2Z"/></svg></button>
+<div id="estado" style="font-weight:700;margin-top:10px">Pulsa el micrófono y habla · Tap the mic and speak</div><div id="tiempo">0:00</div></div>
+<div id="revisar" class="hide"><audio id="player" controls style="width:100%"></audio><div class="btns"><button class="again" id="repetir">Repetir · Again</button><button class="send" id="enviar">Enviar · Send</button></div></div>
+<div id="hecho" class="hide" style="text-align:center;background:#EAF6EC;border-radius:14px;padding:14px;margin-top:10px"><h3 style="color:#2E7D32">¡Enviado! 🎉</h3>Muy bien. Puedes pasar al siguiente apartado.<div class="en">Well done! You can go to the next section.</div></div></div>
+<p class="note" style="text-align:center">Habla con tranquilidad. ¡Los errores son normales! · <span class="en">Take your time — mistakes are OK, just speak!</span></p>
+<div class="secnav" id="secnav"></div><footer>Spanish with Miriam</footer></div><div class="aviso" id="aviso"></div><script>
+const PP=[{"t": "Saludar", "e": "👋", "en": "Greetings", "ex": [["hola", "Hola", "Hello"], ["buenos-dias", "Buenos días", "Good morning"], ["buenas-tardes", "Buenas tardes", "Good afternoon"], ["buenas-noches", "Buenas noches", "Good evening · Good night"], ["que-tal", "¿Qué tal?", "How are you?"], ["bien-gracias", "Bien, gracias. ¿Y tú?", "Fine, thanks. And you?"], ["encantada", "Encantado · Encantada", "Nice to meet you (man · woman)"], ["hasta-luego", "Hasta luego", "See you later"]], "q": [["¿Qué tal?", "How are you?", "Bien, gracias. · Muy bien. · Regular."], ["Saluda a tu profesora por la mañana.", "Say hello to your teacher in the morning.", "Buenos días, Miriam."], ["Di adiós.", "Say goodbye.", "Hasta luego. · Adiós."]]}, {"t": "Yo", "e": "🙋", "en": "About me", "ex": [["me-llamo", "Me llamo Anna.", "My name is Anna."], ["soy-de", "Soy de Inglaterra.", "I'm from England."], ["vivo-en", "Vivo en Londres.", "I live in London."], ["soy-profesora", "Soy profesora.", "I'm a teacher."], ["trabajo-en", "Trabajo en una oficina.", "I work in an office."], ["tengo-anios", "Tengo cuarenta años.", "I'm forty years old."]], "q": [["¿Cómo te llamas?", "What's your name?", "Me llamo…"], ["¿De dónde eres?", "Where are you from?", "Soy de…"], ["¿Dónde vives?", "Where do you live?", "Vivo en…"], ["¿A qué te dedicas?", "What do you do?", "Soy… · Trabajo en…"], ["¿Cuántos años tienes?", "How old are you?", "Tengo … años."]]}, {"t": "Mi familia y mi casa", "e": "🏠", "en": "My family and my home", "ex": [["tengo-hijos", "Tengo dos hijos.", "I have two children."], ["no-tengo", "No tengo hijos.", "I don't have children."], ["tengo-perro", "Tengo un perro.", "I have a dog."], ["vivo-con", "Vivo con mi pareja.", "I live with my partner."], ["vivo-solo", "Vivo solo · Vivo sola.", "I live alone (man · woman)."], ["mi-casa", "Mi casa es pequeña.", "My house is small."]], "q": [["¿Tienes hijos?", "Do you have children?", "Sí, tengo… · No, no tengo hijos."], ["¿Tienes mascotas?", "Do you have pets?", "Tengo un perro / un gato. · No tengo."], ["¿Con quién vives?", "Who do you live with?", "Vivo con… · Vivo solo / sola."], ["¿Cómo es tu casa?", "What's your home like?", "Mi casa es grande / pequeña / bonita."]]}, {"t": "En el bar", "e": "☕", "en": "At the bar", "ex": [["un-cafe", "Un café, por favor.", "A coffee, please."], ["cafe-con-leche", "Un café con leche.", "A white coffee."], ["una-cerveza", "Una cerveza.", "A beer."], ["un-agua", "Un agua, por favor.", "A water, please."], ["cuanto-es", "¿Cuánto es?", "How much is it?"], ["la-cuenta", "La cuenta, por favor.", "The bill, please."], ["gracias", "Muchas gracias.", "Thank you very much."]], "q": [["Pide un café con leche.", "Order a white coffee.", "Hola, un café con leche, por favor."], ["Pregunta el precio.", "Ask the price.", "¿Cuánto es?"], ["Pide la cuenta y da las gracias.", "Ask for the bill and say thank you.", "La cuenta, por favor. Gracias."]]}, {"t": "Mi día", "e": "⏰", "en": "My day", "ex": [["me-levanto", "Me levanto a las siete.", "I get up at seven."], ["desayuno", "Desayuno café y tostadas.", "I have coffee and toast for breakfast."], ["trabajo-de", "Trabajo de nueve a cinco.", "I work from nine to five."], ["como-a-las", "Como a las dos.", "I have lunch at two."], ["ceno", "Ceno a las nueve.", "I have dinner at nine."], ["me-acuesto", "Me acuesto a las once.", "I go to bed at eleven."]], "q": [["¿A qué hora te levantas?", "What time do you get up?", "Me levanto a las…"], ["¿Qué desayunas?", "What do you have for breakfast?", "Desayuno…"], ["¿A qué hora trabajas?", "What time do you work?", "Trabajo de … a …"], ["¿A qué hora te acuestas?", "What time do you go to bed?", "Me acuesto a las…"]]}, {"t": "Expresiones útiles", "e": "🆘", "en": "Useful expressions", "ex": [["no-entiendo", "No entiendo.", "I don't understand."], ["puedes-repetir", "¿Puedes repetir, por favor?", "Can you repeat, please?"], ["mas-despacio", "Más despacio, por favor.", "More slowly, please."], ["como-se-dice", "¿Cómo se dice «dog» en español?", "How do you say \"dog\" in Spanish?"], ["no-se", "No sé.", "I don't know."], ["perdon", "Perdón.", "Sorry · Excuse me."], ["vale", "Vale.", "OK."]], "q": [["You don't understand.", "", "No entiendo. ¿Puedes repetir, por favor?"], ["Your teacher speaks very fast.", "", "Más despacio, por favor."], ["You want to know a word in Spanish.", "", "¿Cómo se dice … en español?"], ["You don't know the answer.", "", "No sé."]]}, {"t": "Reto", "e": "⭐", "en": "Challenge", "ex": [], "q": [["Preséntate en 6 frases, sin leer.", "Introduce yourself in 6 sentences, without reading.", "Hola · Me llamo… · Soy de… · Vivo en… · Soy… · ¡Hasta luego!"]]}];
+const API='https://script.google.com/macros/s/AKfycbx0xfHZzY30OumjLdewfRdhJOPD18EXQg98rnfL9QslBClhVAGgezC2kmqDCsfbzK8LPg/exec';
+const SEC=Math.min(Math.max(parseInt(new URLSearchParams(location.search).get('s')||'1'),1),PP.length);
+const sec=PP[SEC-1];const $=id=>document.getElementById(id);
+function aviso(t){const a=$("aviso");a.textContent=t;a.classList.add("ver");clearTimeout(aviso._t);aviso._t=setTimeout(()=>a.classList.remove("ver"),2600)}
+let vozES=null;function elegir(){if(!("speechSynthesis"in window))return;const es=speechSynthesis.getVoices().filter(v=>/^es/i.test(v.lang));
+ const sc=v=>(/es[-_]ES/i.test(v.lang)?6:2)+(/natural|neural|online/i.test(v.name)?10:0)+(/premium|enhanced|siri/i.test(v.name)?8:0)+(/google/i.test(v.name)?4:0);vozES=es.sort((a,b)=>sc(b)-sc(a))[0]||null}
+if("speechSynthesis"in window){elegir();speechSynthesis.onvoiceschanged=elegir}
+const existe={};function comprobar(s){const a=new Audio();a.preload="metadata";a.onloadedmetadata=()=>existe[s]=true;a.onerror=()=>existe[s]=false;a.src=s}
+let actual=null;function decir(t,src,lento){if(actual){actual.pause();actual=null}if("speechSynthesis"in window)speechSynthesis.cancel();
+ if(existe[src]){actual=new Audio(src);actual.playbackRate=lento?.7:1;actual.play().catch(()=>{});return}
+ if(!("speechSynthesis"in window))return;const u=new SpeechSynthesisUtterance(t.replace(/[«»]/g,""));u.lang="es-ES";if(vozES)u.voice=vozES;u.rate=lento?.55:.85;speechSynthesis.speak(u)}
+(function pintar(){
+ $("titulo").innerHTML=sec.e+" "+SEC+". "+sec.t;$("tituloEn").textContent=sec.en;
+ let h="";
+ if(sec.ex.length){h+='<div class="card"><h3>1 · Escucha y repite <span class="en" style="font-size:.9rem">· Listen and repeat</span></h3>';
+  sec.ex.forEach(([sl,es,en])=>{const src=`audios/pp${SEC}-${sl}.mp3`;comprobar(src);
+   h+=`<div class="exp"><button class="play" data-t="${es.replace(/"/g,"&quot;")}" data-s="${src}">▶</button><button class="play" style="background:#fff;color:var(--rojo);border:2px solid var(--rojo);box-shadow:none" title="Despacio · slow" data-t="${es.replace(/"/g,"&quot;")}" data-s="${src}" data-l="1">🐢</button><div><b>${es}</b><br><span>${en}</span></div></div>`});
+  h+='</div>'}
+ h+=`<div class="card"><h3>${sec.ex.length?"2 · ":""}Ahora tú <span class="en" style="font-size:.9rem">· Now you: answer out loud in one recording</span></h3>`;
+ sec.q.forEach(([es,en,help],i)=>{h+=`<div class="qq"><span class="es">${i+1}. ${es}</span>${en?` <span class="en">${en}</span>`:""}<button class="hb" data-i="${i}">Ayuda · Help</button><div class="help" id="h${i}">💬 ${help}</div></div>`});
+ h+='</div>';$("contenido").innerHTML=h;
+ document.querySelectorAll(".exp .play").forEach(b=>b.onclick=()=>decir(b.dataset.t,b.dataset.s,!!b.dataset.l));
+ document.querySelectorAll(".hb").forEach(b=>b.onclick=()=>$("h"+b.dataset.i).classList.toggle("show"));
+ $("secnav").innerHTML=PP.map((p,i)=>`<a class="${i+1===SEC?"act":""}" href="?s=${i+1}">${p.e} ${p.t}</a>`).join("");
+ try{$("alumna").value=localStorage.getItem("alumna")||JSON.parse(localStorage.getItem("swm_alumno")||'""')||""}catch(e){}
+})();
+let rec,chunks=[],stream,t0,timer,blob,duracion=0,grabando=false,reco=null,textoFinal="";
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const fmt=s=>{s=Math.floor(s);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+function trans(){if(!SR)return;try{reco=new SR();reco.lang="es-ES";reco.continuous=true;reco.interimResults=false;
+ reco.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal)textoFinal+=e.results[i][0].transcript.trim()+". "};
+ reco.onend=()=>{if(grabando)try{reco.start()}catch(e){}};reco.onerror=()=>{};reco.start()}catch(e){reco=null}}
+async function empezar(){const n=$("alumna").value.trim();if(!n){$("estado").textContent="Escribe primero tu nombre 🙂 · Write your name first";$("alumna").focus();return}
+ try{localStorage.setItem("alumna",n);localStorage.setItem("swm_alumno",JSON.stringify(n))}catch(e){}
+ try{stream=await navigator.mediaDevices.getUserMedia({audio:true})}catch(e){$("estado").textContent="Please allow the microphone.";return}
+ if("speechSynthesis"in window)speechSynthesis.cancel();chunks=[];textoFinal="";rec=new MediaRecorder(stream);
+ rec.ondataavailable=e=>e.data.size&&chunks.push(e.data);
+ rec.onstop=()=>{blob=new Blob(chunks,{type:rec.mimeType||"audio/webm"});$("player").src=URL.createObjectURL(blob);$("zona").classList.add("hide");$("revisar").classList.remove("hide");stream.getTracks().forEach(t=>t.stop())};
+ rec.start();grabando=true;trans();t0=Date.now();$("mic").classList.add("on");$("estado").textContent="Grabando… pulsa otra vez para terminar · Recording… tap again to stop";
+ timer=setInterval(()=>{duracion=(Date.now()-t0)/1000;$("tiempo").textContent=fmt(duracion);if(duracion>=300)parar()},250)}
+function parar(){grabando=false;clearInterval(timer);$("mic").classList.remove("on");if(reco)try{reco.stop()}catch(e){};rec.stop();$("estado").textContent="Escucha tu audio y envíalo · Listen and send"}
+$("mic").onclick=()=>grabando?parar():empezar();
+$("repetir").onclick=()=>{$("revisar").classList.add("hide");$("zona").classList.remove("hide");$("tiempo").textContent="0:00";$("estado").textContent="Pulsa el micrófono y habla · Tap the mic and speak"};
+$("enviar").onclick=()=>{$("enviar").disabled=true;$("enviar").textContent="Enviando… · Sending…";
+ setTimeout(()=>{const fr=new FileReader();fr.onload=()=>{
+  fetch(API,{method:"POST",body:JSON.stringify({alumna:$("alumna").value.trim(),seccion:"Primeros pasos · "+SEC+". "+sec.t,audio:fr.result.split(",")[1],mime:blob.type,transcripcion:textoFinal,duracion:duracion})})
+  .then(r=>r.json()).then(j=>{if(j.ok!==true)throw new Error(j.error||"error");$("revisar").classList.add("hide");$("hecho").classList.remove("hide")})
+  .catch(err=>{$("enviar").disabled=false;$("enviar").textContent="Enviar · Send";aviso("No se pudo enviar. Inténtalo otra vez. · Could not send, try again.")})};fr.readAsDataURL(blob)},1200)};
+</script></body></html>

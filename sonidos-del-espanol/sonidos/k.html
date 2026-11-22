@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ca · co · cu · que · qui · Los sonidos del español · Spanish with Miriam</title><meta name="theme-color" content="#B3121C">
+<link rel="icon" href="../logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--rojo:#B3121C;--rojo-osc:#8E0E16;--oro:#E9A81B;--oro-claro:#FBE6B0;--crema:#FFF9EF;--tinta:#2B1A14;--suave:#7A6458;--linea:#F0E2CC;--sombra:0 6px 18px rgba(120,60,20,.10)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--tinta);font-family:Nunito,system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 30px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.15}
+.top{position:sticky;top:0;z-index:5;background:rgba(255,249,239,.95);border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;gap:10px;height:62px;padding-bottom:0}
+.top img{height:54px}
+.top a{margin-left:auto;color:var(--rojo);font-weight:800;text-decoration:none}
+.hero{padding:18px 0 6px}
+.hero h1{color:var(--rojo);font-size:2rem}
+.hero p{color:var(--suave);margin:4px 0 0}
+.ctrl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}
+button{font:inherit;cursor:pointer}
+.chip{border:2px solid var(--rojo);background:#fff;color:var(--rojo);border-radius:20px;padding:6px 14px;font-weight:800}
+.chip.on{background:var(--rojo);color:#fff}
+.panels.one{max-width:520px;margin:0 auto;display:block}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.panel{background:#fff;border:2px solid var(--oro);border-radius:18px;padding:10px;text-align:center;box-shadow:var(--sombra)}
+.panel.no{border-color:#c9c0b8}
+.panel h2{font-size:1.3rem;color:var(--rojo)}
+.panel.no h2{color:#8a8078}
+.panel .ex{color:#9a6c0c;font-weight:800}
+.panel .d{font-size:.92rem;color:#4b3a32;min-height:44px}
+.panel svg{width:100%;height:auto;background:var(--oro-claro);border-radius:12px;margin:6px 0}
+.lbl{font-size:8px;fill:#8a6a10;font-family:Nunito;font-weight:700}
+.card{background:#fff;border-radius:18px;box-shadow:var(--sombra);padding:14px 16px;margin:14px 0}
+.card h3{color:var(--rojo);font-size:1.2rem;margin-bottom:8px}
+.miriam{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.words{display:flex;flex-wrap:wrap;gap:8px}
+.w{display:flex;align-items:center;gap:8px;background:var(--crema);border:2px solid var(--linea);border-radius:14px;padding:6px 10px}
+.w b{font-size:1.1rem}
+.w span{color:var(--suave);font-size:.85rem;font-style:italic}
+.play{border:0;background:var(--rojo);color:#fff;width:34px;height:34px;border-radius:50%;font-size:14px;box-shadow:0 3px 0 var(--rojo-osc)}
+.play.off{background:#d8cfc6;box-shadow:none;cursor:default}
+.box{border-radius:14px;padding:10px 14px;margin:12px 0}
+.rec{background:var(--oro-claro);border-left:6px solid var(--oro)}
+.ojo{background:#FDE3E3;border-left:6px solid var(--rojo)}
+.tt{color:var(--rojo);font-weight:800}
+.en{color:var(--suave);font-style:italic}
+table{border-collapse:collapse;width:100%}
+th{background:var(--rojo);color:#fff;padding:6px 8px;text-align:left}
+td{padding:6px 8px;border-bottom:1px solid var(--linea)}
+tr:nth-child(even) td{background:#FFF3D6}
+.recbtn{background:var(--rojo);color:#fff;border:0;border-radius:14px;padding:10px 16px;font-weight:800;box-shadow:0 3px 0 var(--rojo-osc)}
+.recbtn.live{background:#2E8B57;box-shadow:0 3px 0 #1d6b40}
+.note{font-size:.85rem;color:var(--suave)}
+.vbtn{font-family:Fraunces,serif;font-size:1.6rem;width:54px;height:54px;border-radius:14px;border:2px solid var(--rojo);background:#fff;color:var(--rojo);font-weight:700}
+.vbtn.on{background:var(--rojo);color:#fff}
+footer{text-align:center;color:var(--rojo);font-size:.8rem;margin-top:20px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
+.hub a{display:block;background:#fff;border:2px solid var(--oro);border-radius:18px;padding:18px;text-decoration:none;color:var(--tinta);box-shadow:var(--sombra)}
+.hub a b{font-family:Fraunces,serif;font-size:2rem;color:var(--rojo);display:block}
+
+.palabras{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.palabra{background:#fff;border-radius:22px;box-shadow:var(--sombra);padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center;border:2px solid transparent;transition:border-color .2s}
+.palabra.practicada{border-color:#CDE8D6}
+.palabra .emoji{font-size:4rem;line-height:1;margin:6px 0 8px;filter:drop-shadow(0 3px 4px rgba(0,0,0,.08))}
+.palabra .emoji svg{width:64px;height:64px}
+.palabra .es{font-family:Fraunces,serif;font-size:1.6rem;font-weight:700;color:var(--tinta);padding:4px 10px;border-radius:12px;border:0;border-bottom:2px dashed var(--oro);background:none;cursor:pointer}
+.palabra .es b{color:var(--rojo)}
+.palabra .trad{min-height:1.5em;margin-top:6px;font-weight:700;color:var(--suave);font-size:.98rem}
+.palabra .trad.vista{color:#1F5E8C}
+.acciones{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin-top:12px}
+.acc{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border-radius:14px;font-weight:800;font-size:.92rem;background:var(--crema);border:1.5px solid var(--linea);color:var(--tinta)}
+.acc:disabled{opacity:.4;cursor:default}
+.acc.escuchar{background:var(--rojo);color:#fff;border-color:var(--rojo)}
+.acc.grabar.activo{background:#fff0f0;border-color:var(--rojo);color:var(--rojo);animation:pulso 1s infinite}
+@keyframes pulso{50%{box-shadow:0 0 0 6px rgba(179,18,28,.12)}}
+.acc.comparar{grid-column:1/-1;background:var(--oro-claro);border-color:var(--oro)}
+.acc svg{width:18px;height:18px;flex:none}
+.aviso{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(120px);background:var(--tinta);color:#fff;padding:12px 18px;border-radius:14px;font-weight:700;font-size:.92rem;transition:transform .3s;z-index:20;max-width:90vw;text-align:center}
+.aviso.ver{transform:translateX(-50%) translateY(0)}
+.quien{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.quien input{font:inherit;padding:10px 12px;border:2px solid var(--linea);border-radius:12px;background:var(--crema)}
+.barra{height:8px;background:var(--linea);border-radius:99px;margin-top:6px;overflow:hidden;min-width:90px}
+.barra i{display:block;height:100%;background:var(--oro);border-radius:99px}
+.progreso-txt{font-size:.78rem;color:var(--suave);font-weight:700;margin-top:2px}
+
+.ov{width:100%;border-collapse:separate;border-spacing:0 8px}
+.ov td{background:#fff;border:0;vertical-align:middle;padding:10px}
+.ov tr td:first-child{border-radius:14px 0 0 14px;font-family:Fraunces,serif;font-size:1.7rem;color:var(--rojo);font-weight:700;white-space:nowrap;text-align:center}
+.ov tr td:last-child{border-radius:0 14px 14px 0}
+.ov .how b{display:block}.ov .how span{color:var(--suave);font-size:.9rem}
+.ex4{display:flex;flex-wrap:wrap;gap:6px}
+.ex4 .w{padding:3px 8px}.ex4 .play{width:28px;height:28px;font-size:11px}
+.go{display:inline-block;background:var(--rojo);color:#fff;text-decoration:none;font-weight:800;border-radius:14px;padding:8px 12px;white-space:nowrap;box-shadow:0 3px 0 var(--rojo-osc)}
+.theme{display:inline-block;background:var(--oro-claro);color:#7a5200;border-radius:12px;padding:4px 10px;font-weight:800;margin-top:6px}
+.grid8{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.w8{background:#fff;border:2px solid var(--linea);border-radius:16px;padding:10px;display:flex;align-items:center;gap:10px}
+.w8 .e{font-size:2rem}.w8 b{font-size:1.15rem;display:block}.w8 span{color:var(--suave);font-style:italic;font-size:.9rem}
+.how2{background:#fff;border-radius:18px;box-shadow:var(--sombra);padding:14px 16px;margin:14px 0}
+.how2 h3{color:var(--rojo);margin-bottom:6px}
+.nav{display:flex;justify-content:space-between;margin-top:16px}.nav a{color:var(--rojo);font-weight:800;text-decoration:none}
+@media(max-width:640px){.ov tr{display:block;background:#fff;border-radius:14px;margin-bottom:8px}.ov td{display:block;border-radius:0!important}.ov tr td:first-child{text-align:left}}
+</style></head><body>
+<div class="top"><div class="wrap"><img alt="Spanish with Miriam" src="../logo.png"><a href="index.html">← Todos los sonidos</a></div></div>
+<div class="wrap"><div class="hero"><h1>ca · co · cu · que · qui</h1><p>Como k · <span class="en">Like k</span></p><div class="theme">Tema · Topic: ☕ En el bar · At the bar</div></div><div class="how2"><h3>How to say it</h3><p><b>ca, co, cu</b> and <b>que, qui</b> sound like <b>k</b>. In <b>que, qui</b> the <b>u is silent</b>: <i>queso</i> = "keso".</p><p>The Spanish k is <b>softer</b> than in English: no puff of air. Trick: hold a paper in front of your mouth — it shouldn't move.</p><div class="box ojo" style="margin-bottom:0"><span class="tt">Ojo · Careful</span><br><i>aquí</i> = "a-ki", not "a-kwi".</div></div><div class="card"><h3>Escucha a Miriam <span class="en" style="font-size:.9rem">· Listen to Miriam</span></h3><div class="miriam"><button class="play expl" data-src="audios/k-explicacion.mp3" aria-label="play">▶</button><span>Miriam explains how to make this sound.</span></div></div><div class="card"><h3>8 palabras · ☕ En el bar · At the bar</h3><p class="note">Listen, record yourself and compare. Tap a word to see it in English. <b>Escucha, grábate y compara.</b></p><div class="quien" id="quien" style="margin-bottom:10px"></div></div><div class="palabras" id="lista-palabras"></div><div class="nav"><a href="z.html">‹ ce · ci · z</a><a href="b-v.html">b · v ›</a></div><footer>Spanish with Miriam</footer></div><div class="aviso" id="aviso"></div>
+<script>
+const URL_SEGUIMIENTO="https://script.google.com/macros/s/AKfycbxz3Gcwg-mrELpsy6ZmOY4SFO3GO7S9zA3_U_xgOQiLLdE2aOq3bdgSWE3UcT1luzaM/exec";
+const PAGE={"k": "k", "titulo": "ca \u00b7 co \u00b7 cu \u00b7 que \u00b7 qui", "words": [["cafe", "caf\u00e9", "coffee", "\u2615"], ["queso", "queso", "cheese", "\ud83e\uddc0"], ["croquetas", "croquetas", "croquettes", "\ud83e\udd5f"], ["calamares", "calamares", "squid rings", "\ud83e\udd91"], ["la-cuenta", "la cuenta", "the bill", "\ud83e\uddfe"], ["aqui", "aqu\u00ed", "here", "\ud83d\udc47"], ["poco", "poco", "a little", "\ud83e\udd0f"], ["boquerones", "boquerones", "anchovies", "\ud83d\udc1f"]], "re": "qu|c(?=[aou\u00e1\u00f3\u00far])"};
+const $=s=>document.querySelector(s);
+const guardar=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const leer=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+let alumno=leer("swm_alumno","");
+let practicadas=leer("swm_sonidos_"+(alumno||"_"),{});
+function aviso(t){const a=$("#aviso");a.textContent=t;a.classList.add("ver");clearTimeout(aviso._t);aviso._t=setTimeout(()=>a.classList.remove("ver"),2600)}
+/* seguimiento: misma hoja que Pronunciación */
+let cola=leer("swm_cola",[]);
+function registrar(accion,seccion="",palabra=""){if(!alumno)return;cola.push({t:new Date().toISOString(),alumno,seccion:"Sonidos · "+seccion,palabra,accion});guardar("swm_cola",cola);clearTimeout(registrar._t);registrar._t=setTimeout(enviar,4000)}
+function enviar(){if(!URL_SEGUIMIENTO||!cola.length)return;const lote=cola.slice(0,50);
+ fetch(URL_SEGUIMIENTO,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({eventos:lote})}).then(()=>{cola=cola.slice(lote.length);guardar("swm_cola",cola);if(cola.length)enviar()}).catch(()=>{})}
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden")enviar()});
+/* voz: audio de Miriam si existe; si no, la mejor voz española del dispositivo */
+let vozES=null,audioActual=null;const existe={};
+function puntuarVoz(v){let p=0;if(/es[-_]ES/i.test(v.lang))p+=6;else if(/^es/i.test(v.lang))p+=2;if(/natural|neural|online/i.test(v.name))p+=10;if(/premium|enhanced|mejorad|siri/i.test(v.name))p+=8;if(/google/i.test(v.name))p+=4;if(v.localService===false)p+=1;return p}
+function elegirVoz(){if(!("speechSynthesis"in window))return;const es=speechSynthesis.getVoices().filter(v=>/^es/i.test(v.lang));vozES=es.sort((a,b)=>puntuarVoz(b)-puntuarVoz(a))[0]||null}
+if("speechSynthesis"in window){elegirVoz();speechSynthesis.onvoiceschanged=elegirVoz}
+function comprobar(src){if(src in existe)return;existe[src]=null;const a=new Audio();a.preload="metadata";a.onloadedmetadata=()=>existe[src]=true;a.onerror=()=>existe[src]=false;a.src=src}
+function decir(texto,src,alTerminar,despacio){
+ if(audioActual){audioActual.pause();audioActual=null}if("speechSynthesis"in window)speechSynthesis.cancel();
+ if(src&&existe[src]){const a=new Audio(src);a.playbackRate=despacio?0.7:1;try{a.preservesPitch=true}catch(e){}if(alTerminar)a.onended=alTerminar;audioActual=a;a.play().catch(()=>{});return}
+ if(!("speechSynthesis"in window)){aviso("Este navegador no tiene voz. Prueba con Chrome o Safari.");return}
+ const u=new SpeechSynthesisUtterance(texto);u.lang="es-ES";if(vozES)u.voice=vozES;u.rate=despacio?0.55:0.88;if(alTerminar)u.onend=alTerminar;speechSynthesis.speak(u)}
+/* grabación (no se guarda nada) */
+const grabaciones={};let grabador=null,flujo=null;
+const ICON={play:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>',
+mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/></svg>',
+stop:'<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>',
+yo:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="7 4 19 12 7 20 7 4"/></svg>',
+cmp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h11l-3-3"/><path d="M17 17H6l3 3"/></svg>'};
+async function alternarGrabacion(clave,boton,tarjeta,sec,es){
+ if(grabador&&grabador.state==="recording"){grabador.stop();return}
+ if(!navigator.mediaDevices||!window.MediaRecorder){aviso("Tu navegador no permite grabar. Prueba con Chrome o Safari.");return}
+ try{flujo=await navigator.mediaDevices.getUserMedia({audio:true})}catch(e){aviso("Necesito permiso para usar el micrófono 🎙️");return}
+ if("speechSynthesis"in window)speechSynthesis.cancel();
+ const trozos=[];grabador=new MediaRecorder(flujo);
+ grabador.ondataavailable=e=>{if(e.data.size)trozos.push(e.data)};
+ grabador.onstop=()=>{flujo.getTracks().forEach(t=>t.stop());if(grabaciones[clave])URL.revokeObjectURL(grabaciones[clave]);
+  grabaciones[clave]=URL.createObjectURL(new Blob(trozos,{type:grabador.mimeType||"audio/webm"}));
+  boton.classList.remove("activo");boton.innerHTML=ICON.mic+"Grabarme";
+  tarjeta.querySelector(".mia").disabled=false;tarjeta.querySelector(".comparar").disabled=false;clearTimeout(alternarGrabacion._t);
+  if(!practicadas[clave]){practicadas[clave]=true;guardar("swm_sonidos_"+(alumno||"_"),practicadas)}tarjeta.classList.add("practicada")};
+ grabador.start();registrar("grabar",sec,es);boton.classList.add("activo");boton.innerHTML=ICON.stop+"Parar";
+ alternarGrabacion._t=setTimeout(()=>{if(grabador.state==="recording")grabador.stop()},6000)}
+function oirMia(clave,fin){const s=grabaciones[clave];if(!s)return;const a=new Audio(s);if(fin)a.onended=fin;a.play()}
+function resaltar(p,re){return re?p.replace(re,m=>`<b>${m}</b>`):p}
+/* nombre (el mismo que en Pronunciación) */
+function pintarQuien(){const q=$("#quien");if(!q)return;
+ if(alumno){q.innerHTML=`<span>👋 <b>${alumno}</b></span> <button class="chip" id="cambiar">cambiar</button>`;$("#cambiar").onclick=()=>{enviar();alumno="";guardar("swm_alumno","");pintarQuien()}}
+ else{q.innerHTML=`<input id="nom" placeholder="¿Cómo te llamas? · Your name" maxlength="40"><button class="chip on" id="ok">OK</button>`;
+  const ok=()=>{const n=$("#nom").value.trim();if(!n)return;alumno=n.charAt(0).toUpperCase()+n.slice(1);guardar("swm_alumno",alumno);practicadas=leer("swm_sonidos_"+alumno,{});registrar("entrada",PAGE.titulo||"");pintarQuien();pintar()};
+  $("#ok").onclick=ok;$("#nom").onkeydown=e=>{if(e.key==="Enter")ok()}}}
+/* tarjetas de palabras: igual que en Pronunciación */
+function pintar(){
+ const lista=$("#lista-palabras");
+ if(lista){lista.innerHTML="";
+ PAGE.words.forEach(([slug,es,en,emoji])=>{
+  const clave=PAGE.k+":"+slug,src=`audios/${PAGE.k}-${slug}.mp3`;comprobar(src);
+  const re=PAGE.re?new RegExp(PAGE.re,"gi"):null;
+  const t=document.createElement("div");t.className="palabra"+(practicadas[clave]?" practicada":"");
+  t.innerHTML=`<div class="emoji" aria-hidden="true">${emoji}</div><button class="es" title="Tap to see it in English">${resaltar(es,re)}</button><div class="trad">&nbsp;</div>
+   <div class="acciones"><button class="acc escuchar">${ICON.play}Escuchar</button><button class="acc grabar">${ICON.mic}Grabarme</button>
+   <button class="acc mia" disabled>${ICON.yo}Mi voz</button><button class="acc modelo">🐢 Despacio</button>
+   <button class="acc comparar" disabled>${ICON.cmp}Comparar: modelo → mi voz</button></div>`;
+  if(grabaciones[clave]){t.querySelector(".mia").disabled=false;t.querySelector(".comparar").disabled=false}
+  t.querySelector(".es").onclick=()=>{const tr=t.querySelector(".trad");const v=tr.classList.toggle("vista");tr.innerHTML=v?"🇬🇧 "+en:"&nbsp;";if(v){decir(es,src);registrar("traducción",PAGE.titulo,es)}};
+  t.querySelector(".escuchar").onclick=()=>{decir(es,src);registrar("escuchar",PAGE.titulo,es)};
+  t.querySelector(".modelo").onclick=()=>{decir(es,src,null,true);registrar("escuchar despacio",PAGE.titulo,es)};
+  t.querySelector(".grabar").onclick=e=>alternarGrabacion(clave,e.currentTarget,t,PAGE.titulo,es);
+  t.querySelector(".mia").onclick=()=>oirMia(clave);
+  t.querySelector(".comparar").onclick=()=>{registrar("comparar",PAGE.titulo,es);decir(es,src,()=>setTimeout(()=>oirMia(clave),350))};
+  lista.appendChild(t)});}
+ // progreso en la página general
+ document.querySelectorAll("[data-prog]").forEach(el=>{const k=el.dataset.prog,n=+el.dataset.n;const h=Object.keys(practicadas).filter(x=>x.startsWith(k+":")).length;
+  el.innerHTML=`<div class="barra"><i style="width:${h/n*100}%"></i></div><div class="progreso-txt">${h} / ${n} practicadas</div>`});
+ document.querySelectorAll(".ejemplo").forEach(b=>{comprobar(b.dataset.src);b.onclick=()=>{decir(b.dataset.es,b.dataset.src);registrar("escuchar ejemplo",b.dataset.sec,b.dataset.es)}});
+}
+/* explicación de Miriam */
+document.querySelectorAll(".expl").forEach(b=>{const a=new Audio();a.preload="metadata";b.classList.add("off");a.onloadedmetadata=()=>b.classList.remove("off");a.src=b.dataset.src;
+ b.onclick=()=>{if(b.classList.contains("off")){aviso("Miriam's explanation is coming soon 🙂");return}if("speechSynthesis"in window)speechSynthesis.cancel();a.currentTime=0;a.play();registrar("explicación",PAGE.titulo)}});
+pintarQuien();pintar();if(alumno&&PAGE.titulo)registrar("abrir sonido",PAGE.titulo);
+window.addEventListener("beforeunload",enviar);
+</script></body></html>
