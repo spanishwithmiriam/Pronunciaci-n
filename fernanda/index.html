@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resumen de clase · Fernanda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* VOICE: cálida y clara, de profesora a alumna
+   IDEA: la ficha de clase de Spanish with Miriam, como un cuaderno
+   PICTURE: cabecera roja con logo y el resumen como primera tarjeta
+   COLOUR and TYPE: rojo #B00000, dorado #E3A51A, crema #FFF2C9; Poppins
+   LAYOUT: una columna de lectura, índice de secciones, repaso interactivo al final */
+:root{color-scheme:light;--bg:#fff;--ink:#2b2b2b;--soft:#6b5a3a;
+--red:#B00000;--gold:#E3A51A;--cream:#FFF2C9;--pink:#FDE3E3;--line:#f0dca0;--card:#fff;--ok:#1f7a3a}
+
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 Poppins,system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:72px}
+header{background:#fff;color:var(--ink);border-bottom:4px solid var(--gold);padding:clamp(20px,4vw,40px) max(5vw,16px)}
+.hin{max-width:900px;margin:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.logo{width:110px;flex:none}
+.logo img{width:100%;display:block}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.08;margin:0;color:#B00000;text-wrap:balance}
+.meta{margin:6px 0 0;color:#9a7b2c;font-weight:500}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #eee}
+nav .scroll{max-width:900px;margin:auto;display:flex;gap:6px;padding:8px max(2vw,12px)}
+nav a{flex:none;color:var(--red);text-decoration:none;font-weight:600;font-size:14px;padding:6px 12px;border-radius:99px;background:var(--cream)}
+nav a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+main{max-width:900px;margin:auto;padding:24px max(4vw,16px) 60px}
+section{margin:0 0 56px}
+h2{color:var(--red);font-size:21px;margin:0 0 10px;padding-bottom:6px;border-bottom:2px solid var(--gold)}
+h3{color:var(--red);font-size:17px;margin:18px 0 6px}
+.summary{background:var(--cream);border-radius:12px;padding:18px 22px}.summary h3{margin-top:26px}
+.summary p.lead{font-weight:500;margin:0 0 6px}
+ul{padding-left:20px;margin:8px 0 14px}li{margin:10px 0}
+.box{border-radius:8px;padding:10px 14px;margin:10px 0}
+.rec{background:var(--cream);border-left:6px solid var(--gold)}
+.ojo{background:var(--pink);border-left:6px solid var(--red)}
+.box b.t{color:var(--red)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0;background:var(--card)}
+th{background:var(--red);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+td{padding:12px 12px;line-height:1.7;border-bottom:1px solid var(--line);vertical-align:top}
+
+.verbs td,.verbs th{white-space:nowrap}
+.bad{color:var(--red);text-decoration:line-through}.good{color:var(--ok);font-weight:600}
+.steps li{list-style:none;margin:8px 0;padding-left:0}
+.who{display:inline-block;font-size:13px;font-weight:600;border-radius:99px;padding:1px 10px;margin-right:6px;background:var(--gold);color:#3a2700}
+.who.t{background:var(--red);color:#fff}
+.q{background:#fff;border:1px solid #eee;border-radius:10px;padding:14px 16px;margin:14px 0}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+button{font:inherit;font-size:15px;min-height:44px;padding:6px 16px;border-radius:10px;border:2px solid var(--gold);background:var(--card);color:var(--ink);cursor:pointer}
+button.right{background:#d9f2df;border-color:#1f7a3a;color:#134d24}
+button.wrong{background:#fbd5d5;border-color:#B00000;color:#7a0000}
+input{font:inherit;font-size:16px;min-height:44px;padding:6px 10px;border-radius:8px;border:2px solid var(--line);background:var(--bg);color:var(--ink);width:min(220px,100%)}
+input.right{border-color:#1f7a3a}input.wrong{border-color:#B00000}
+.fb{font-size:14px;font-weight:600;margin-left:6px}
+.main-btn{background:var(--red);color:#fff;border-color:var(--red);margin-top:8px}
+.sol{display:none}.sol.on{display:block}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.tabs button{border:2px solid var(--gold);background:#fff;color:var(--red);font-weight:600;border-radius:99px;padding:6px 18px}
+.tabs button[aria-selected=true]{background:var(--red);border-color:var(--red);color:#fff}
+.panel[hidden]{display:none}
+h3{margin-top:28px}
+footer{text-align:center;color:var(--soft);font-size:13px;padding:20px}
+@media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;font-weight:600;color:var(--red)}.stack td:empty{display:none}.logo{width:90px}}
+</style><script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script></head><body>
+
+<header><div class="hin"><div class="logo"><img src="data:image/jpeg;base64,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" alt="Spanish with Miriam"></div>
+<div><h1>Resumen de clase</h1><p class="meta">Miércoles, 25 de noviembre de 2026 · Nivel B1</p></div></div></header>
+
+
+
+<main>
+<div class="tabs" role="tablist">
+<button role="tab" data-t="resumen" aria-selected="true">Resumen</button><button role="tab" data-t="explicaciones">Explicaciones</button><button role="tab" data-t="vocabulario">Vocabulario</button><button role="tab" data-t="correcciones">Correcciones</button><button role="tab" data-t="repaso">Repaso</button>
+</div>
+
+<section id="resumen" class="panel"><h2>Resumen</h2><div class="summary">
+<p class="lead">Repaso de días, meses y pronunciación (v/b, «ci»); se explicó «muy» vs «mucho» y el pasado «he ido» vs «fui». Deberes: dos formularios con enlaces para el viernes.</p>
+<h3>Días de la semana y meses</h3><ul>
+<li>Días de la semana dichos completos sin errores; meses con confusión entre septiembre y noviembre, y faltó junio en la lista.</li></ul>
+<h3>Pronunciación</h3><ul>
+<li>En español la «v» y la «b» suenan igual; evitar la «v» del portugués (no «vi-embre») y pronunciar la «i» de noviembre.</li>
+<li>La «ci» de diciembre suena como en «cielo»; práctica con noviembre, victoria, virgo, diciembre, decimos, cielo, quinientos.</li>
+<li>Frase de práctica superada: «Soy Victoria y vivo en Vigo desde diciembre. El cielo es azul».</li></ul>
+<h3>En el médico y vocabulario</h3><ul>
+<li>En España se dice «el pasado miércoles» en lugar de «el último miércoles».</li>
+<li>Expresiones útiles: «me duele la barriga desde ayer», «creo que me sienta mal la leche», «hice algún movimiento que me hizo daño».</li>
+<li>«Academia» en España es un sitio para estudiar; para deporte se dice gimnasio, polideportivo, pabellón o estadio.</li>
+<li>En España se dice «ordenador», no «computadora»; «coworking» se dice igual o «espacio de coworking».</li></ul>
+<h3>Muy vs mucho</h3><ul>
+<li>«Muy» intensifica adjetivos y adverbios: «el piso es muy luminoso», «vivo muy cerca».</li>
+<li>«Mucho» con acciones: «trabajo mucho», «me gusta mucho»; con «gustar» siempre «mucho» («me gustan mucho las flores»).</li>
+<li>Con sustantivos concuerda en género y número: «mucha gente», «muchas ganas», «muchos pisos», «tengo mucho calor».</li>
+<li>Decir «estaba muy caliente» para el calor tiene connotación sexual; lo correcto es «tengo mucho calor».</li></ul>
+<h3>Adjetivos</h3><ul>
+<li>Repaso de listas de adjetivos por categoría, para revisar en casa:<ul>
+<li>Cosas: caro, barato, nuevo, viejo, cómodo, pesado, ligero, moderno, antiguo</li>
+<li>Personas: simpático, amable, divertido, serio, trabajador, vago, tímido, educado, maleducado</li>
+<li>Lugares: luminoso, oscuro, tranquilo, ruidoso, limpio, sucio, céntrico, animado, acogedor</li>
+<li>Experiencias: emocionante, aburrido, relajante, estresante, agotador, inolvidable, increíble</li></ul></li>
+<li>La próxima vez habrá deberes de escribir frases con distintos adjetivos; los deberes son voluntarios, cuando se pueda.</li></ul>
+<h3>Tiempos del pasado</h3><ul>
+<li>«Fui/hice» para tiempo terminado (ayer, anoche, la semana pasada); «he ido/he hecho» para tiempo no terminado (hoy, esta semana, últimamente).</li>
+<li>Forma compuesta: «he» más participio (he trabajado, he comido); irregulares: he ido, he hecho.</li>
+<li>Ejemplos: «Ayer fui a trabajar a un espacio de coworking, pero hoy no he ido»; «Ayer hice 16 kilómetros en bicicleta estática».</li>
+<li>Se dice «por la mañana / por la tarde / por la noche»; «anoche» significa «last night».</li></ul>
+<h3>Próximos pasos</h3><ul>
+<li>(Fernanda) Hacer los dos formularios de la actividad antes de la clase del viernes</li></ul>
+<h3>Decisiones tomadas</h3><ul>
+<li>Próxima clase de seguimiento: el viernes</li></ul>
+</div></section>
+
+<section id="explicaciones" class="panel" hidden>
+<h2>Explicaciones</h2>
+<h3>Pronunciación: v = b, ce/ci</h3>
+<p>En español la <b>v</b> y la <b>b</b> suenan igual, como la «b» de «bien». La <b>c</b> delante de <b>e / i</b> suena como en <b>cielo</b>.</p>
+<div class="box rec">Practica en voz alta: <b>Soy Victoria y vivo en Vigo desde diciembre. El cielo es azul.</b></div>
+
+<h3>Muy y mucho</h3>
+<table class="stack"><thead><tr><th>Forma</th><th>Uso</th><th>Ejemplo</th></tr></thead><tbody>
+<tr><td><b>muy</b></td><td>Con adjetivos y adverbios. No cambia.</td><td>El piso es <b>muy</b> luminoso. Vivo <b>muy</b> cerca.</td></tr>
+<tr><td><b>mucho</b></td><td>Después de un verbo (acciones). No cambia.</td><td>Trabajo <b>mucho</b>. Me gusta <b>mucho</b>.</td></tr>
+<tr><td><b>mucho, mucha, muchos, muchas</b></td><td>Con sustantivos. Concuerda en género y número.</td><td><b>mucha</b> gente · <b>muchas</b> ganas · <b>muchos</b> pisos · <b>mucho</b> calor</td></tr></tbody></table>
+<div class="box ojo"><b class="t">Ojo:</b> para el calor decimos <b>tengo mucho calor</b>. «Estoy caliente» tiene un sentido sexual.</div>
+
+<h3>El pasado: fui / he ido</h3>
+<table class="stack"><thead><tr><th>Forma</th><th>Cuándo</th><th>Ejemplo</th></tr></thead><tbody>
+<tr><td><b>fui · hice</b></td><td>Tiempo terminado: ayer, anoche, la semana pasada, el año pasado.</td><td>Ayer <b>fui</b> a trabajar a un espacio de coworking.</td></tr>
+<tr><td><b>he ido · he hecho</b></td><td>Tiempo no terminado: hoy, esta mañana, esta semana, últimamente, alguna vez.</td><td>Hoy no <b>he ido</b>. Nunca <b>he viajado</b> a España.</td></tr></tbody></table>
+<div class="box rec"><b>he / has / ha / hemos / habéis / han</b> + participio: trabaj<b>ado</b>, com<b>ido</b>, viv<b>ido</b>. Irregulares: <b>ido</b> (ir), <b>hecho</b> (hacer).</div>
+
+<h3>En el médico</h3>
+<ul>
+<li><b>Me duele</b> la barriga / la espalda <b>desde</b> ayer / el pasado miércoles.</li>
+<li>Creo que <b>me sienta mal</b> la leche.</li>
+<li>Creo que hice algún movimiento que <b>me hizo daño</b>.</li>
+</ul>
+
+<h3>Adjetivos para describir</h3>
+<table class="stack"><thead><tr><th>Para</th><th>Adjetivos</th></tr></thead><tbody>
+<tr><td><b>Cosas</b></td><td>caro, barato, nuevo, viejo, cómodo, pesado, ligero, moderno, antiguo</td></tr>
+<tr><td><b>Personas</b></td><td>simpático, amable, divertido, serio, trabajador, vago, tímido, educado, maleducado</td></tr>
+<tr><td><b>Lugares</b></td><td>luminoso, oscuro, tranquilo, ruidoso, limpio, sucio, céntrico, animado, acogedor</td></tr>
+<tr><td><b>Experiencias</b></td><td>emocionante, aburrido, relajante, estresante, agotador, inolvidable, increíble</td></tr></tbody></table>
+</section>
+
+<section id="vocabulario" class="panel" hidden><h2>Vocabulario</h2>
+<table class="stack"><thead><tr><th>Palabra</th><th>Significado y ejemplo</th></tr></thead><tbody>
+<tr><td><b>el pasado miércoles</b></td><td>last Wednesday · Me duele desde el pasado miércoles.</td></tr>
+<tr><td><b>la barriga</b></td><td>tummy · Me duele la barriga desde ayer.</td></tr>
+<tr><td><b>sentar mal</b></td><td>to not agree with you (food) · Me sienta mal la leche.</td></tr>
+<tr><td><b>hacerse daño</b></td><td>to hurt yourself · Ese movimiento me hizo daño.</td></tr>
+<tr><td><b>la academia</b></td><td>sitio para estudiar · Voy a una academia de inglés.</td></tr>
+<tr><td><b>el gimnasio / el polideportivo</b></td><td>gym / sports centre · Hago deporte en el gimnasio.</td></tr>
+<tr><td><b>el ordenador</b></td><td>computer (en España) · Tengo el cuaderno abierto en el ordenador.</td></tr>
+<tr><td><b>el espacio de coworking</b></td><td>coworking space · Ayer fui a un espacio de coworking.</td></tr>
+<tr><td><b>anoche</b></td><td>last night · Anoche dormí poco.</td></tr>
+<tr><td><b>el sobrino / la sobrina</b></td><td>nephew / niece · Mi sobrina está enferma.</td></tr>
+<tr><td><b>la bicicleta estática</b></td><td>exercise bike · Ayer hice 16 km en bicicleta estática.</td></tr>
+<tr><td><b>llover</b></td><td>to rain · Llueve mucho en Galicia.</td></tr>
+<tr><td><b>la pegatina</b></td><td>sticker</td></tr>
+<tr><td><b>la piscina · el bikini · el bañador</b></td><td>pool · bikini · swimsuit</td></tr>
+</tbody></table></section>
+
+<section id="correcciones" class="panel" hidden><h2>Correcciones</h2>
+<table class="stack"><thead><tr><th>Dijiste</th><th>Mejor así</th></tr></thead><tbody>
+<tr><td class="bad">Desde el último miércoles.</td><td class="good">Desde el pasado miércoles.</td></tr>
+<tr><td class="bad">Creo que hago algún movimiento raro.</td><td class="good">Creo que hice algún movimiento que me hizo daño.</td></tr>
+<tr><td class="bad">En la academia. / En la gimnasio.</td><td class="good">En el gimnasio.</td></tr>
+<tr><td class="bad">Ayer fui a trabajar en el escritorio.</td><td class="good">Ayer fui a trabajar a un espacio de coworking.</td></tr>
+<tr><td class="bad">Pero hoy no fui.</td><td class="good">Pero hoy no he ido.</td></tr>
+<tr><td class="bad">He ido a trabajar en mi hermana.</td><td class="good">He ido a trabajar a casa de mi hermano.</td></tr>
+<tr><td class="bad">Nunca he hecho viaje a España.</td><td class="good">Nunca he viajado a España.</td></tr>
+<tr><td class="bad">Estaba muy caliente.</td><td class="good">Tenía mucho calor.</td></tr>
+<tr><td class="bad">Mueve mucho en Galicia.</td><td class="good">Llueve mucho en Galicia.</td></tr>
+<tr><td class="bad">Prefiero lembrar de respirar.</td><td class="good">Prefiero acordarme de respirar.</td></tr>
+<tr><td class="bad">Computadora.</td><td class="good">Ordenador.</td></tr></tbody></table>
+<div class="box rec"><b class="t">¡Muy bien!</b> Los días de la semana sin errores, «Soy Victoria y vivo en Vigo desde diciembre», «Hay mucha gente en el mercado», «Tengo muchas ganas de mudarme», «Hoy no he hecho ninguna actividad porque estaba muy cansada».</div>
+</section>
+
+<section id="repaso" class="panel" hidden><h2>Repaso</h2>
+<h3>Gramática</h3><p>Frases nuevas para practicar. Elige la opción correcta:</p><div id="qa"></div>
+<h3>Vocabulario</h3><p>Elige la palabra correcta:</p><div id="qv"></div>
+</section>
+</main>
+<footer>Spanish with Miriam · Resumen de la clase del 25 de noviembre de 2026</footer>
+
+<script>{
+const qa=[["Mi casa es ___ grande.",["muy","mucho"],0],["Me gusta ___ el café.",["muy","mucho"],1],["Hay ___ coches en la calle.",["muy","muchos"],1],["Tengo ___ sed.",["mucho","mucha"],1],["Vivo ___ lejos del centro.",["muy","mucho"],0],["Esta semana ___ al médico.",["fui","he ido"],1],["El año pasado ___ a Portugal.",["viajé","he viajado"],0],["Esta mañana ___ la compra.",["hice","he hecho"],1],["Anoche ___ una película.",["vi","he visto"],0],["Hace sol y ___ mucho calor.",["estoy","tengo"],1]];
+const qv=[["Para hacer deporte voy al ___.",["gimnasio","academia"],0],["Para estudiar inglés voy a una ___.",["academia","piscina"],0],["En España trabajo con el ___.",["computadora","ordenador"],1],["La hija de mi hermano es mi ___.",["sobrina","prima"],0],["Un piso con mucha luz es ___.",["oscuro","luminoso"],1],["Una persona que no quiere trabajar es ___.",["vaga","amable"],0],["Un viaje que no vas a olvidar es ___.",["aburrido","inolvidable"],1],["Me duele la ___ desde ayer.",["barriga","pegatina"],0]];
+const quiz=(id,data)=>{const el=document.getElementById(id);
+el.innerHTML=data.map(([t,o],i)=>`<div class="q">${i+1}. ${t}<div class="opts">${o.map((x,j)=>`<button data-q="${i}" data-o="${j}">${x}</button>`).join('')}</div></div>`).join('');
+el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const ok=+b.dataset.o===data[+b.dataset.q][2];
+b.parentElement.querySelectorAll('button').forEach(x=>x.className='');b.className=ok?'right':'wrong'})};
+quiz('qa',qa);quiz('qv',qv);
+const tabs=[...document.querySelectorAll('[role=tab]')];
+const show=t=>{if(!document.getElementById(t))t='resumen';tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==t)};
+tabs.forEach(b=>b.addEventListener('click',()=>{show(b.dataset.t);try{history.replaceState(null,'','#'+b.dataset.t)}catch(e){};window.scrollTo(0,0)}));
+show(location.hash.slice(1)||'resumen');addEventListener('hashchange',()=>show(location.hash.slice(1)));
+}</script>
+</body></html>
